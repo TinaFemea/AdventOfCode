@@ -1,5 +1,0 @@
-C:\code\personal\AdventOfCode\Day3\bin\Debug\input.txt
-C:\code\personal\AdventOfCode\Day3\bin\Debug\Day3.exe
-C:\code\personal\AdventOfCode\Day3\bin\Debug\Day3.pdb
-C:\code\personal\AdventOfCode\Day3\obj\x86\Debug\Day3.exe
-C:\code\personal\AdventOfCode\Day3\obj\x86\Debug\Day3.pdb
