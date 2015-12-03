@@ -11,7 +11,7 @@ namespace Day4
 {
     class Program
     {
-        static void CountHouses(IEnumerable<char> directions, Dictionary<Tuple<long, long>, bool> houses)
+        static void DeliverPackages(IEnumerable<char> directions, Dictionary<Tuple<long, long>, bool> houses)
         {
             long x = 0;
             long y = 0;
@@ -50,12 +50,14 @@ namespace Day4
             String inputText = File.ReadAllText("input.txt");
 
             Dictionary<Tuple<long, long>, bool> houses = new Dictionary<Tuple<long, long>, bool>();
-            CountHouses(inputText, houses);
+            
+            
+            DeliverPackages(inputText, houses);
             Console.WriteLine("Santa alone: {0}", houses.Count);
             
             houses.Clear();
-            CountHouses(inputText.Where((thisChar, i) => i % 2 == 0), houses);
-            CountHouses(inputText.Where((thisChar, i) => i % 2 == 1), houses);
+            DeliverPackages(inputText.Where((thisChar, i) => i % 2 == 0), houses);
+            DeliverPackages(inputText.Where((thisChar, i) => i % 2 == 1), houses);
             Console.WriteLine("Santa and Robot: {0}", houses.Count);
         }
     }
