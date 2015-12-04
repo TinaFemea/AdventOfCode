@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApplication1
+namespace Day4
 {
     class Program
     {

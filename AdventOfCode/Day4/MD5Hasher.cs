@@ -2,7 +2,7 @@
 using System.Text;
 using System.Security.Cryptography;
 
-namespace ConsoleApplication1
+namespace Day4
 {
     class MD5Hasher
     {

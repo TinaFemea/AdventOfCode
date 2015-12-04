@@ -7,7 +7,7 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace ConsoleApplication1
+namespace Day4
 {
     class Program
     {
