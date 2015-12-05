@@ -31,6 +31,7 @@ namespace Day4
             double numMilliseconds = (DateTime.Now - start).TotalMilliseconds;
 
             Console.WriteLine("{0} iterations in {1} milliseconds", totalIterations, numMilliseconds );
+            Console.ReadLine();
         }
     }
 }
