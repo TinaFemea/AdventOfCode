@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security.Policy;
@@ -26,21 +27,20 @@ namespace Day5
                 return false;
 
             //   It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the other requirements.  
-            if (theString.Contains("ab") || theString.Contains("cd") || theString.Contains("pq") ||
-                theString.Contains("xy"))
+            if (theString.Contains("ab") || theString.Contains("cd") || theString.Contains("pq") || theString.Contains("xy"))
                 return false;
 
             return true;
         }
 
-        static bool IsStringPartTwoNice(String theString)
+        static bool IsStringPartTwoNice(string theString)
         {
             // It contains a pair of any two letters that appears at least twice in the string without overlapping, 
             // like xyxy (xy) or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
             bool matchFound = false;
             for (int i = 0; i < theString.Length - 2; i++)
             {
-                String thisPairOfTwoLetters = theString[i].ToString() + theString[i + 1].ToString();
+                string thisPairOfTwoLetters = theString[i] + theString[i + 1].ToString();
                 if (theString.IndexOf(thisPairOfTwoLetters, i + 2, StringComparison.Ordinal) != -1)
                 {
                     matchFound = true;
@@ -72,6 +72,8 @@ namespace Day5
 
         static void Main(string[] args)
         {
+            Stopwatch watch = Stopwatch.StartNew();
+
             /* Part 1 */
             if (IsStringPartOneNice("ugknbfddgicrmopn") == false)
                 throw new ApplicationException("ugknbfddgicrmopn");
@@ -107,6 +109,9 @@ namespace Day5
             long numLines2Nice = File.ReadLines("input.txt").Count(IsStringPartTwoNice); // 55
             Console.WriteLine(numLines2Nice);
 
+            watch.Stop();
+            long elapsedMs = watch.ElapsedMilliseconds;
+            Console.WriteLine("Timing: {0}", elapsedMs);
         }
     }
 }
