@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace Day4
 {
@@ -17,7 +18,7 @@ namespace Day4
                 throw new Exception("test case failed");
 */
             string key = "ckczppom";
-            DateTime start = DateTime.Now;
+            Stopwatch watch = Stopwatch.StartNew();
             long fiveZerosResult = hasher.FindLowestHashThatStartsWithNZeros(key, 5);
             Console.WriteLine("5 zeros: {0}", fiveZerosResult);
 
@@ -28,7 +29,8 @@ namespace Day4
                 throw new Exception("test case failed");
 
             long totalIterations = fiveZerosResult + sixZerosResult;
-            double numMilliseconds = (DateTime.Now - start).TotalMilliseconds;
+            watch.Stop();
+            double numMilliseconds = watch.ElapsedMilliseconds;
 
             Console.WriteLine("{0} iterations in {1} milliseconds", totalIterations, numMilliseconds );
             Console.ReadLine();

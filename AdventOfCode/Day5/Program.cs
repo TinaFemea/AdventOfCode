@@ -75,36 +75,20 @@ namespace Day5
             Stopwatch watch = Stopwatch.StartNew();
 
             /* Part 1 */
-            if (IsStringPartOneNice("ugknbfddgicrmopn") == false)
-                throw new ApplicationException("ugknbfddgicrmopn");
-
-            if (IsStringPartOneNice("aaa") == false)
-                throw new ApplicationException("aaa");
-
-            if (IsStringPartOneNice("jchzalrnumimnmhp") == true)
-                throw new ApplicationException("jchzalrnumimnmhp");
-
-            if (IsStringPartOneNice("haegwjzuvuyypxyu") == true)
-                throw new ApplicationException("haegwjzuvuyypxyu");
-
-            if (IsStringPartOneNice("dvszwmarrgswjxmb") == true)
-                throw new ApplicationException("dvszwmarrgswjxmb");
+            Trace.Assert(IsStringPartOneNice("ugknbfddgicrmopn"));
+            Trace.Assert(IsStringPartOneNice("aaa"));
+            Trace.Assert(IsStringPartOneNice("jchzalrnumimnmhp") == false);
+            Trace.Assert(IsStringPartOneNice("haegwjzuvuyypxyu") == false);
+            Trace.Assert(IsStringPartOneNice("dvszwmarrgswjxmb") == false);
 
             long numLinesNice = File.ReadLines("input.txt").Count(IsStringPartOneNice); // 255
             Console.WriteLine(numLinesNice);
 
             /* Part 2 */
-            if (IsStringPartTwoNice("qjhvhtzxzqqjkmpb") == false)
-                throw new ApplicationException("qjhvhtzxzqqjkmpb");
-
-            if (IsStringPartTwoNice("xxyxx") == false)
-                throw new ApplicationException("xxyxx");
-
-            if (IsStringPartTwoNice("uurcxstgmygtbstg") == true)
-                throw new ApplicationException("uurcxstgmygtbstg");
-
-            if (IsStringPartTwoNice("ieodomkazucvgmuy") == true)
-                throw new ApplicationException("ieodomkazucvgmuy");
+            Trace.Assert(IsStringPartTwoNice("qjhvhtzxzqqjkmpb"));
+            Trace.Assert(IsStringPartTwoNice("xxyxx"));
+            Trace.Assert(IsStringPartTwoNice("uurcxstgmygtbstg") == false);
+            Trace.Assert(IsStringPartTwoNice("ieodomkazucvgmuy") == false);
 
             long numLines2Nice = File.ReadLines("input.txt").Count(IsStringPartTwoNice); // 55
             Console.WriteLine(numLines2Nice);
