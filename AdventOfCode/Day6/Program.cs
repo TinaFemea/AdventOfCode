@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -107,6 +108,8 @@ namespace Day6
 
         static void Main(string[] args)
         {
+            /*
+            Stopwatch watch = Stopwatch.StartNew();
             Dictionary<Tuple<int, int>, int> lights = new Dictionary<Tuple<int, int>, int>();
 
             foreach (var line in File.ReadLines("input.txt"))
@@ -122,6 +125,14 @@ namespace Day6
             long totalBrightness = lights.Sum(pair => pair.Value);
             Console.WriteLine(totalBrightness);
 
+            watch.Stop();
+            long timing = watch.ElapsedMilliseconds;
+            Console.WriteLine("slow method: {0} ms", timing);
+            */
+            FastLights fastLights = new FastLights();
+            fastLights.ProcessLightsFaster();
+
+            Console.ReadLine();
 
         }
     }
