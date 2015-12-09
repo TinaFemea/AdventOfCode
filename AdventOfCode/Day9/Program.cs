@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Day7
+namespace Day9
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-            CircuitProcessor processor = new CircuitProcessor();
-            processor.ProcessInput();
+            TravelingSanta santa = new TravelingSanta();
 
+            santa.GoSantaGo();
         }
     }
 }

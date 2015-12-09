@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{75761AC2-F160-4B9D-BA67-A7974960FD70}</ProjectGuid>
+    <ProjectGuid>{62600FBC-96E1-4F17-9831-CD9E304A78E7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Day7</RootNamespace>
-    <AssemblyName>Day7</AssemblyName>
+    <RootNamespace>Day9</RootNamespace>
+    <AssemblyName>Day9</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CircuitProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TravelingSanta.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="input.txt">
