@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Runtime.CompilerServices;
-using System.Text;
+
 
 namespace Day9
 {
-
     class TravelingSanta
     {
         Dictionary<Tuple<string, string>, int> locations = new Dictionary<Tuple<string, string>, int>();
@@ -36,16 +33,14 @@ namespace Day9
         {
             string[] allLines = File.ReadAllLines("input.txt");
             foreach (string line in allLines)
-            {
                 AddToMap(line);
-            }
         }
 
-        public static List<List<string>> GetPermutations(List<string> items)
+        public static List<List<string>> BuildPermutations(List<string> items)
         {
             if (items.Count > 1)
             {
-                return items.SelectMany(item => GetPermutations(items.Where(i => !i.Equals(item)).ToList()),
+                return items.SelectMany(item => BuildPermutations(items.Where(i => !i.Equals(item)).ToList()),
                                        (item, permutation) => new [] { item }.Concat(permutation).ToList()).ToList();
             }
 
@@ -57,14 +52,12 @@ namespace Day9
             long minTripLength = long.MaxValue;
             long maxTripLength = 0;
 
-            List<List<string>> allPermutations = GetPermutations(allTowns);
+            List<List<string>> allPermutations = BuildPermutations(allTowns);
             foreach (List<string> thisPermutation in allPermutations)
             {
                 long tripLength = 0;
                 for (int i = 0; i < thisPermutation.Count - 1; i++)
-                {
                     tripLength += locations[new Tuple<string, string>(thisPermutation[i], thisPermutation[i + 1])];
-                }
 
                 minTripLength = Math.Min(tripLength, minTripLength);
                 maxTripLength = Math.Max(tripLength, maxTripLength);
