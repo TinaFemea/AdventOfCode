@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -29,6 +30,7 @@ namespace Day10
 
         static void Main(string[] args)
         {
+            Stopwatch timer = Stopwatch.StartNew();
             string input = "1321131112";
 
             for (int i = 0; i < 40; i++)
@@ -39,7 +41,8 @@ namespace Day10
             for (int i = 0; i < 10; i++)
                 input = ExpandInput(input);
 
-            Console.WriteLine("50 iterations: {0}", input.Length);
+            timer.Stop();
+            Console.WriteLine("50 iterations: {0} in {1} ms", input.Length, timer.ElapsedMilliseconds);
             Console.ReadLine();
         }
     }
