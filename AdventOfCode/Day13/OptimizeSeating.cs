@@ -53,13 +53,11 @@ namespace Day13
                 happinessMap[new Tuple<string, string>(person, "me")] = 0;
             }
             allPeople.Add("me");
-            
         }
 
         public long ComputeHappiness()
         {
             ProcessInput();
-
 
             List<List<string>> possibilities = BuildPermutations(allPeople);
 
@@ -83,7 +81,6 @@ namespace Day13
             }
 
             return maxHappiness;
-            return 0;
         }
     }
 }
