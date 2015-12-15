@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day12", "..\Day12\Day12.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day13", "..\Day13\Day13.csproj", "{126E82F5-72FD-4680-9BD3-E67152C2F7F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day14", "..\Day14\Day14.csproj", "{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -167,6 +169,16 @@ Global
 		{126E82F5-72FD-4680-9BD3-E67152C2F7F2}.Release|Win32.ActiveCfg = Release|x86
 		{126E82F5-72FD-4680-9BD3-E67152C2F7F2}.Release|x86.ActiveCfg = Release|x86
 		{126E82F5-72FD-4680-9BD3-E67152C2F7F2}.Release|x86.Build.0 = Release|x86
+		{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}.Debug|Win32.ActiveCfg = Debug|x86
+		{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}.Debug|x86.ActiveCfg = Debug|x86
+		{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}.Debug|x86.Build.0 = Debug|x86
+		{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}.Release|Mixed Platforms.Build.0 = Release|x86
+		{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}.Release|Win32.ActiveCfg = Release|x86
+		{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}.Release|x86.ActiveCfg = Release|x86
+		{5F8B21B5-C8CB-4E0B-B812-6F132EF6A89E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
