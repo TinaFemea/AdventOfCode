@@ -40,13 +40,18 @@ namespace Day15
             int durability = 0;
             int flavor = 0;
             int texture = 0;
+            int calories = 0;
             for (int i = 0; i < ingredients.Count; i++)
             {
                 capacity += ingredients[i].capacity * amounts[i];
                 durability += ingredients[i].durability * amounts[i];
                 flavor += ingredients[i].flavor * amounts[i];
                 texture += ingredients[i].texture * amounts[i];
+                calories += ingredients[i].calories * amounts[i];
             }
+
+            if (calories != 500)
+                return 0;
 
             if (capacity < 0 || durability < 0 || flavor < 0 || texture < 0)
                 return 0;
@@ -64,7 +69,22 @@ namespace Day15
                 ingredients.Add(currIngredient);
             }
 
-            int totalScore = ComputeScore(new[] { 25, 25, 25, 25 });
+            int[] thisTry = new[] {0, 0, 0, 0};
+            int maxScore = Int32.MinValue;
+            for (thisTry[0] = 0; thisTry[0] <= 100; thisTry[0]++)
+                for (thisTry[1] = 0; thisTry[1] <= 100-thisTry[0]; thisTry[1]++)
+                    for (thisTry[2] = 0; thisTry[2] <= 100-(thisTry[0] + thisTry[1]); thisTry[2]++)
+                        for (thisTry[3] = 0; thisTry[3] <= 100 - (thisTry[0] + thisTry[1] + thisTry[2]); thisTry[3]++)
+                        {
+                            if ((thisTry[0] + thisTry[1] + thisTry[2] + thisTry[3]) != 100)
+                                continue;
+                            int thisScore = ComputeScore(thisTry);
+                            if (thisScore > maxScore)
+                            {
+                                maxScore = thisScore;
+                                Console.WriteLine("{0}: {1}, {2}, {3}, {4}", thisScore, thisTry[0], thisTry[1], thisTry[2], thisTry[3]);
+                            }
+                        }
 
 
         }
