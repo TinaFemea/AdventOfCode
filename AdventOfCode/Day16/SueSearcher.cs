@@ -30,30 +30,36 @@ namespace Day16
         public int FindSue()
         {
             foreach (string line in File.ReadLines("input.txt"))
-            {
                 Parse(line);
-            }
 
-            Dictionary<string, int> requirements = new Dictionary<String, Int32>(10);
+            Dictionary<string, int> greaterThenRequirements = new Dictionary<String, Int32>(2);
+            greaterThenRequirements["cats"] = 7;
+            greaterThenRequirements["trees"] = 3;
 
+            Dictionary<string, int> lessThenRequirements = new Dictionary<String, Int32>(2);
+            lessThenRequirements["pomeranians"] = 3;
+            lessThenRequirements["goldfish"] = 5;
+
+            Dictionary<string, int> requirements = new Dictionary<String, Int32>(6);
             requirements["children"] = 3;
-            requirements["cats"] = 7;
             requirements["samoyeds"] = 2;
-            requirements["pomeranians"] = 3;
             requirements["akitas"] = 0;
             requirements["vizslas"] = 0;
-            requirements["goldfish"] = 5;
-            requirements["trees"] = 3;
             requirements["cars"] = 2;
             requirements["perfumes"] = 1;
             
 
-            //  Find anyone with 3 children or no 
             List<int> stillValidSues = new List<int>(ListOfSues.Keys);
             foreach (KeyValuePair<string, int> requirement in requirements)
                 stillValidSues = ListOfSues.Where(X => !X.Value.ContainsKey(requirement.Key) || X.Value[requirement.Key] == requirement.Value).Select(Y => Y.Key).Where(X => stillValidSues.Contains(X)).ToList();
-            
-            return 0;
+
+            foreach (KeyValuePair<string, int> requirement in greaterThenRequirements)
+                stillValidSues = ListOfSues.Where(X => !X.Value.ContainsKey(requirement.Key) || X.Value[requirement.Key] > requirement.Value).Select(Y => Y.Key).Where(X => stillValidSues.Contains(X)).ToList();
+
+            foreach (KeyValuePair<string, int> requirement in lessThenRequirements)
+                stillValidSues = ListOfSues.Where(X => !X.Value.ContainsKey(requirement.Key) || X.Value[requirement.Key] < requirement.Value).Select(Y => Y.Key).Where(X => stillValidSues.Contains(X)).ToList();
+
+            return stillValidSues.First();
         }
     }
 }
