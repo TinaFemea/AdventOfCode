@@ -27,6 +27,7 @@ namespace Day16
             ListOfSues[sueNumber] = theAttributes;
         }
 
+
         public int FindSue()
         {
             foreach (string line in File.ReadLines("input.txt"))
