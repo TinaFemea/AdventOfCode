@@ -1,0 +1,7 @@
+C:\code\personal\AdventOfCode-2016\Day1\bin\Debug\Day1.exe
+C:\code\personal\AdventOfCode-2016\Day1\bin\Debug\Day1.pdb
+C:\code\personal\AdventOfCode-2016\Day1\obj\x86\Debug\Day1.exe
+C:\code\personal\AdventOfCode-2016\Day1\obj\x86\Debug\Day1.pdb
+C:\code\personal\AdventOfCode-2016\Day1\obj\x86\Debug\Day1.csprojResolveAssemblyReference.cache
+C:\code\personal\AdventOfCode-2016\Day1\bin\Debug\Day1.exe.config
+C:\code\personal\AdventOfCode-2016\Day1\bin\Debug\input.txt
